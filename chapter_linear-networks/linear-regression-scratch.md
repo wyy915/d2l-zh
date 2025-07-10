@@ -335,6 +335,8 @@ for epoch in range(num_epochs):
 #@tab pytorch
 for epoch in range(num_epochs):
     for X, y in data_iter(batch_size, features, labels):
+#data_iter 是一个生成器，每次返回一个批量的特征 X 和标签 y（大小由 batch_size 决定）。
+#例如，若 batch_size=64，则 X.shape=[64, n_features]，y.shape=[64, 1]。
         l = loss(net(X, w, b), y)  # X和y的小批量损失
         # 因为l形状是(batch_size,1)，而不是一个标量。l中的所有元素被加到一起，
         # 并以此计算关于[w,b]的梯度
