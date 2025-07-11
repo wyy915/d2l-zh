@@ -1,10 +1,14 @@
-# softmax回归的从零开始实现
+  # softmax回归的从零开始实现
 :label:`sec_softmax_scratch`
 
 (**就像我们从零开始实现线性回归一样，**)
 我们认为softmax回归也是重要的基础，因此(**应该知道实现softmax回归的细节**)。
 本节我们将使用刚刚在 :numref:`sec_fashion_mnist`中引入的Fashion-MNIST数据集，
 并设置数据迭代器的批量大小为256。
+
+交叉熵用来衡量两个概率之间的区别,softmax的损失就简化为对真实类别的预测值求对数再取负。
+也就是说损失函数是似然的负对数
+
 
 ```{.python .input}
 from d2l import mxnet as d2l
